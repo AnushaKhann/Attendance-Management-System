@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faculty Dashboard</title>
+    <link rel="stylesheet" href="faculty-dashboard.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Faculty Dashboard</h1>
+        
+        <label for="choose-class">Choose Class:</label>
+        <select id="choose-class">
+            <option value="">Select a class</option>
+        </select>
+        
+        <label for="new-class">Add Class:</label>
+        <input type="text" id="new-class" placeholder="Enter new class name">
+        <button id="add-class-btn">Add Class</button>
+
+        <label for="choose-subject">Choose Subject:</label>
+        <select id="choose-subject">
+            <option value="">Select a subject</option>
+            <option value="Math">Math</option>
+            <option value="Science">Science</option>
+            <option value="English">English</option>
+            <!-- Add more subjects as needed -->
+        </select>
+
+        <label for="password">Re-enter Password:</label>
+        <input type="password" id="password" placeholder="Enter your password">
+
+        <button id="open-attendance-btn">Open Attendance Sheet</button>
+        
+        <div id="message" class="message"></div>
+    </div>
+
+    <script src="faculty-dashboard.js"></script>
+</body>
+</html>

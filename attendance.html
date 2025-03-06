@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Attendance Sheet</title>
+    <link rel="stylesheet" href="attendance.css">
+</head>
+<body>
+    <div class="attendance-container">
+        <h1>Attendance Sheet</h1>
+        <!-- Dropdown Menu -->
+        <div class="dropdown-menu">
+            <div class="dropdown-item">Faculty Name: <span id="faculty-name"></span></div>
+            <div class="dropdown-item">Class Name: <span id="class-name"></span></div>
+            <div class="dropdown-item">Subject: <span id="subject-name"></span></div>
+            <div class="dropdown-item">Total Students: <span id="total-students">0</span></div>
+            <label for="attendance-date">Select Date:</label>
+            <input type="date" id="attendance-date">
+            <button id="load-attendance-btn">Load Attendance</button>
+
+        </div>
+
+        <!-- Student Add Form -->
+        <form id="student-form">
+            <input type="text" id="student-name" placeholder="Student Name">
+            <input type="text" id="student-id" placeholder="System ID">
+            <input type="text" id="student-roll" placeholder="Roll No.">
+            <button type="button" id="add-student-btn">Add Student</button>
+        </form>
+
+        <!-- Attendance Table -->
+        <table id="attendance-table">
+            <thead>
+                <tr>
+                    <th>Serial No.</th>
+                    <th>Student Name</th>
+                    <th>System ID</th>
+                    <th>Roll No.</th>
+                    <th>Attendance</th>
+                    <th>Remove</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Dynamic rows will be added here -->
+            </tbody>
+        </table>
+
+        <!-- Buttons -->
+        <div class="attendance-buttons">
+            <button id="submit-attendance-btn">Submit Attendance</button>
+            <button id="export-attendance-btn">Export to Excel</button>
+            <button id="update-attendance-btn" style="display:none;">Update Attendance</button>
+            <button id="lock-attendance-btn" style="display:none;">Lock Attendance</button>
+        </div>
+    </div>
+
+    <!-- Include the xlsx library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+    <!-- Your custom script -->
+    <script src="attendance.js"></script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="login-container">
+        <h1>Login</h1>
+        
+        <div id="login-options">
+            <button id="faculty-login-btn">Faculty Login</button>
+            <button id="student-login-btn">Student Login</button>
+        </div>
+
+        <div id="faculty-login-form" style="display: none;">
+            <h2>Faculty Login</h2>
+            <input type="text" id="faculty-username" placeholder="Username">
+            <input type="password" id="faculty-password" placeholder="Password">
+            <button id="faculty-submit-btn">Submit</button>
+        </div>
+
+        <div id="student-login-form" style="display: none;">
+            <h2>Student Login</h2>
+            <input type="text" id="student-id" placeholder="System ID">
+            <input type="password" id="student-password" placeholder="Password">
+            <button id="student-submit-btn">Submit</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

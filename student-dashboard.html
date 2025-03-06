@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard</title>
+    <link rel="stylesheet" href="student-dashboard.css">
+</head>
+<body>
+    <header>
+        <h1>Student Attendance Dashboard</h1>
+        <div id="dropdown-menu">
+            <label for="attendance-date">Select Date:</label>
+            <input type="date" id="attendance-date">
+        </div>
+    </header>
+
+    <main>
+        <div id="no-records-message" class="hidden">No attendance records found for the selected date.</div>
+        <table id="attendance-record">
+            <thead>
+                <tr>
+                    <th>Serial No.</th>
+                    <th>Subject</th>
+                    <th>Attendance Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Attendance data will be dynamically added here -->
+            </tbody>
+        </table>
+        <button id="export-to-excel">Export to Excel</button>
+    </main>
+
+    <script src="student-dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,88 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+/* Header Styles */
+header {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+}
+
+#dropdown-menu {
+    margin: 20px;
+    text-align: center;
+}
+
+/* Table Styles */
+#attendance-record {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    display: none; /* Initially hidden */
+}
+
+#attendance-record th, #attendance-record td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+#attendance-record th {
+    background-color: #007bff;
+    color: white;
+}
+
+#attendance-record td.serial-number {
+    width: 50px; /* Adjust the width of the Serial No. column */
+}
+
+/* Attendance Status Styles */
+.attendance-status {
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: white;
+}
+
+.attendance-present {
+    background-color: green;
+}
+
+.attendance-absent {
+    background-color: red;
+}
+
+.attendance-late {
+    background-color: grey;
+}
+
+/* No Records Message */
+#no-records-message {
+    text-align: center;
+    color: #555;
+    font-size: 18px;
+    margin-top: 20px;
+    display: none;
+}
+
+/* Export Button */
+#export-to-excel {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#export-to-excel:hover {
+    background-color: #45a049;
+}
