@@ -28,10 +28,20 @@
             <!-- Add more subjects as needed -->
         </select>
 
+        <div class="attendance-type-selection">
+            <label for="attendance-type">Choose Attendance Type:</label>
+            <select id="attendance-type">
+                <option value="" selected disabled>Select an option</option>
+                <option value="manual">Manual Attendance</option>
+                <option value="facial">Facial Recognition Attendance</option>
+                <option value="qr">Generate QR</option>
+            </select>
+        </div>      
+
         <label for="password">Re-enter Password:</label>
         <input type="password" id="password" placeholder="Enter your password">
 
-        <button id="open-attendance-btn">Open Attendance Sheet</button>
+        <button id="open-attendance-btn" class="disabled" disabled>Open Attendance Sheet</button>
         
         <div id="message" class="message"></div>
     </div>

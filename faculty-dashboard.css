@@ -1,57 +1,109 @@
+/* General Styling */
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
     margin: 0;
     padding: 20px;
     background-image: url(1.jpg);
+    background-size: cover;
+    background-position: center;
 }
 
+/* Container for Faculty Dashboard */
 .container {
-    max-width: 600px;
+    max-width: 800px;
     margin: auto;
     background: white;
     padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
+/* Heading */
 h1 {
     text-align: center;
     color: #333;
 }
 
+/* Labels */
 label {
     display: block;
     margin: 10px 0 5px;
-    color: #555;
+    font-weight: bold;
+    color: #444;
 }
 
+/* Input Fields and Dropdowns */
 input[type="text"],
 input[type="password"],
 select {
     width: 100%;
-    padding: 8px;
-    margin-bottom: 10px;
+    padding: 10px;
+    margin-bottom: 12px;
     border: 1px solid #ccc;
-    border-radius: 4px;
+    border-radius: 5px;
+    font-size: 16px;
 }
 
+/* Buttons */
 button {
     width: 100%;
-    padding: 10px;
-    background-color: #28a745;
+    padding: 12px;
+    font-size: 16px;
+    background-color: #007bff;
     color: white;
     border: none;
-    border-radius: 4px;
+    border-radius: 5px;
     cursor: pointer;
+    transition: 0.3s;
 }
 
 button:hover {
+    background-color: #0056b3;
+}
+
+/* Disabled Button Styling */
+button.disabled {
+    background-color: gray;
+    cursor: not-allowed;
+}
+
+/* Attendance Type Selection */
+.attendance-type-selection {
+    margin-top: 20px;
+    text-align: center;
+}
+
+#attendance-type {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #007bff;
+    border-radius: 5px;
+    width: 100%;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+/* Attendance Type Dropdown Styling */
+.attendance-type-selection select:focus {
+    outline: none;
+    border-color: #0056b3;
+}
+
+/* Open Attendance Button */
+#open-attendance-btn {
+    background-color: #28a745;
+    margin-top: 15px;
+}
+
+#open-attendance-btn:hover {
     background-color: #218838;
 }
 
+/* Message Display */
 .message {
     margin-top: 10px;
+    font-size: 14px;
     color: red;
     text-align: center;
 }

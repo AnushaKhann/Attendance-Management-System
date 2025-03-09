@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-    // Handle user type selection
+    // Handle user type selection (Faculty or Student)
     document.getElementById("faculty-login-btn").addEventListener("click", function () {
         document.getElementById("login-options").style.display = "none";
         document.getElementById("faculty-login-form").style.display = "block";
@@ -24,6 +24,10 @@ document.addEventListener("DOMContentLoaded", function () {
         const data = await response.json();
 
         if (data.success && data.role === "faculty") {
+            // Store faculty credentials in sessionStorage
+            sessionStorage.setItem("facultyUsername", username);
+            sessionStorage.setItem("facultyPassword", password); 
+
             window.location.href = "faculty-dashboard.html";
         } else {
             document.getElementById("faculty-error").style.display = "block";
@@ -49,4 +53,14 @@ document.addEventListener("DOMContentLoaded", function () {
             document.getElementById("student-error").style.display = "block";
         }
     });
+
+    // Handle Logout (Clear Stored Credentials)
+    const logoutButton = document.getElementById("logout-btn");
+    if (logoutButton) {
+        logoutButton.addEventListener("click", function () {
+            sessionStorage.removeItem("facultyUsername");
+            sessionStorage.removeItem("facultyPassword");
+            window.location.href = "index.html";
+        });
+    }
 });
