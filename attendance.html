@@ -4,28 +4,60 @@
     <meta charset="UTF-8">
     <title>Attendance Sheet</title>
     <link rel="stylesheet" href="attendance.css">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
-<body>
-    <div class="attendance-container">
-        <h1>Attendance Sheet</h1>
-        <!-- Dropdown Menu -->
-        <div class="dropdown-menu">
-            <div class="dropdown-item">Faculty Name: <span id="faculty-name"></span></div>
-            <div class="dropdown-item">Class Name: <span id="class-name"></span></div>
-            <div class="dropdown-item">Subject: <span id="subject-name"></span></div>
-            <div class="dropdown-item">Total Students: <span id="total-students">0</span></div>
-            <label for="attendance-date">Select Date:</label>
-            <input type="date" id="attendance-date">
-            <button id="load-attendance-btn">Load Attendance</button>
-
+<body class="bg-gray-50 text-gray-800">
+    <!-- Header -->
+    <header class="bg-white shadow-md p-4 flex justify-between items-center">
+        <div class="flex items-center space-x-3">
+          <img src="/images/sharda-logo.png" alt="Sharda University" class="h-10 w-auto">
+          <span class="text-xl font-semibold">Attendance Portal</span>
         </div>
+    </header>
+    <!-- Hero Section -->
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
 
-        <!-- Student Add Form -->
+<!-- Hero Section with Image Slider as Background -->
+    <section class="relative h-screen w-full overflow-hidden">
+        <!-- Swiper Background -->
+        <div class="absolute inset-0 z-0">
+            <div class="swiper heroSwiper h-full">
+                 <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="/images/campus2.avif" class="w-full h-full object-cover opacity-70" />
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="/images/pic.jpg" class="w-full h-full object-cover opacity-70" />
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="/images/campus3.jpeg" class="w-full h-full object-cover opacity-70" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="absolute inset-0 bg-black/50 z-10"></div>
+        <div class="relative z-10 h-full flex flex-col justify-center items-center text-black text-center px-6 backdrop-brightness-75">
+            
+            <div class="attendance-container">
+                <h1 class="text-4xl md:text-5xl font-bold mb-6 drop-shadow-[0_4px_8px_rgba(0,0,0,0.9)] text-black bg-black/50 px-6 py-4 rounded-2xl">Attendance Sheet</h1>
+                <!-- Dropdown Menu -->
+                <div class="dropdown-menu">
+                    <div class="dropdown-item">Faculty Name: <span id="faculty-name"></span></div>
+                    <div class="dropdown-item">Class Name: <span id="class-name"></span></div>
+                    <div class="dropdown-item">Subject: <span id="subject-name"></span></div>
+                    <div class="dropdown-item">Total Students: <span id="total-students">0</span></div>
+                    <label for="attendance-date">Select Date:</label>
+                    <input type="date" id="attendance-date">
+                    <button class="bg-green-600 hover:bg-green-700 transition px-3 py-1.5 text-white rounded-md text-sm font-medium shadow-md" id="load-attendance-btn">Load Attendance</button>
+                </div>
+
+                <!-- Student Add Form -->
         <form id="student-form">
             <input type="text" id="student-name" placeholder="Student Name">
             <input type="text" id="student-id" placeholder="System ID">
             <input type="text" id="student-roll" placeholder="Roll No.">
-            <button type="button" id="add-student-btn">Add Student</button>
+            <button  class="bg-green-600 hover:bg-green-700 transition px-3 py-1.5 rounded-md text-sm font-medium shadow-md" type="button" id="add-student-btn">Add Student</button>
         </form>
 
         <!-- Attendance Table -->
@@ -47,12 +79,64 @@
 
         <!-- Buttons -->
         <div class="attendance-buttons">
-            <button id="submit-attendance-btn">Submit Attendance</button>
-            <button id="export-attendance-btn">Export to Excel</button>
-            <button id="update-attendance-btn" style="display:none;">Update Attendance</button>
-            <button id="lock-attendance-btn" style="display:none;">Lock Attendance</button>
+            <button class="bg-green-600 hover:bg-green-700 transition px-3 py-1.5 text-white rounded-md text-sm font-medium shadow-md" id="submit-attendance-btn">Submit Attendance</button>
+            <button class="bg-green-600 hover:bg-green-700 transition px-3 py-1.5 text-white rounded-md text-sm font-medium shadow-md" id="export-attendance-btn">Export to Excel</button>
+            <button class="bg-green-600 hover:bg-green-700 transition px-3 py-1.5 text-white rounded-md text-sm font-medium shadow-md" id="update-attendance-btn" style="display:none;">Update Attendance</button>
+            <button class="bg-green-600 hover:bg-green-700 transition px-3 py-1.5 text-white rounded-md text-sm font-medium shadow-md" id="lock-attendance-btn" style="display:none;">Lock Attendance</button>
         </div>
     </div>
+</div>
+</section>
+
+ <!-- Font Awesome CDN for icons -->
+ <link
+ rel="stylesheet"
+ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+ />
+ 
+ <!-- Footer Section -->
+ <footer class="bg-gray-900 text-white py-12">
+ <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-3 gap-8">
+ 
+   <!-- College Info -->
+   <div>
+     <h4 class="text-lg font-semibold mb-4">Sharda University</h4>
+     <p class="text-gray-400 text-sm">Plot No. 32-34, Knowledge Park III,<br> Greater Noida, Uttar Pradesh – 201306</p>
+   </div>
+ 
+   <!-- Contact Info -->
+   <div>
+     <h4 class="text-lg font-semibold mb-4">Contact Us</h4>
+     <p class="text-gray-400 text-sm mb-1"><i class="fas fa-phone mr-2"></i> +91 120 4570000</p>
+     <p class="text-gray-400 text-sm"><i class="fas fa-envelope mr-2"></i> info@sharda.ac.in</p>
+   </div>
+ 
+   <!-- Social Media -->
+   <div>
+     <h4 class="text-lg font-semibold mb-4">Follow Us</h4>
+     <div class="flex gap-4 text-xl">
+       <a href="https://www.facebook.com/ShardaUniversity/" target="_blank" class="hover:text-blue-400 transition">
+         <i class="fab fa-facebook-f"></i>
+       </a>
+       <a href="https://twitter.com/shardauniv" target="_blank" class="hover:text-blue-300 transition">
+         <i class="fab fa-twitter"></i>
+       </a>
+       <a href="https://www.instagram.com/sharda_university/" target="_blank" class="hover:text-pink-400 transition">
+         <i class="fab fa-instagram"></i>
+       </a>
+       <a href="https://www.linkedin.com/school/sharda-university/" target="_blank" class="hover:text-blue-600 transition">
+         <i class="fab fa-linkedin-in"></i>
+       </a>
+     </div>
+   </div>
+ 
+ </div>
+ 
+ <!-- Bottom Footer -->
+ <div class="text-center text-gray-500 text-sm mt-10">
+   &copy; 2025 Sharda University | All rights reserved.
+ </div>
+ </footer>
 
     <!-- Include the xlsx library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
@@ -60,3 +144,71 @@
     <script src="attendance.js"></script>
 </body>
 </html>
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Attendance Sheet</title>
+    <link rel="stylesheet" href="attendance.css">
+</head>
+<body>
+    <div class="attendance-container">
+        <h1>Attendance Sheet</h1> -->
+        <!-- Dropdown Menu -->
+        <!-- <div class="dropdown-menu">
+            <div class="dropdown-item">Faculty Name: <span id="faculty-name"></span></div>
+            <div class="dropdown-item">Class Name: <span id="class-name"></span></div>
+            <div class="dropdown-item">Subject: <span id="subject-name"></span></div>
+            <div class="dropdown-item">Total Students: <span id="total-students">0</span></div>
+            <label for="attendance-date">Select Date:</label>
+            <input type="date" id="attendance-date">
+            <button id="load-attendance-btn">Load Attendance</button>
+
+        </div> -->
+
+        <!-- Student Add Form -->
+        <!-- <form id="student-form">
+            <input type="text" id="student-name" placeholder="Student Name">
+            <input type="text" id="student-id" placeholder="System ID">
+            <input type="text" id="student-roll" placeholder="Roll No.">
+            <button type="button" id="add-student-btn">Add Student</button>
+        </form> -->
+
+        <!-- Attendance Table -->
+        <!-- <table id="attendance-table">
+            <thead>
+                <tr>
+                    <th>Serial No.</th>
+                    <th>Student Name</th>
+                    <th>System ID</th>
+                    <th>Roll No.</th>
+                    <th>Attendance</th>
+                    <th>Remove</th>
+                </tr>
+            </thead>
+            <tbody> -->
+                <!-- Dynamic rows will be added here -->
+            <!-- </tbody>
+        </table> -->
+
+        <!-- Buttons -->
+        <!-- <div class="attendance-buttons">
+            <button id="submit-attendance-btn">Submit Attendance</button>
+            <button id="export-attendance-btn">Export to Excel</button>
+            <button id="update-attendance-btn" style="display:none;">Update Attendance</button>
+            <button id="lock-attendance-btn" style="display:none;">Lock Attendance</button>
+        </div>
+    </div> -->
+
+    <!-- Include the xlsx library -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script> -->
+    <!-- Your custom script -->
+    <!-- <script src="attendance.js"></script>
+</body>
+</html> -->

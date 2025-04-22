@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Capture Face</title>
+</head>
+<body>
+  <h1>Hello {{ username }}! Look at the camera</h1>
+
+  <video id="video" width="640" height="480" autoplay></video>
+  <canvas id="canvas" style="display:none;"></canvas>
+  <br />
+  <button id="captureBtn">Capture Face</button>
+
+  <form action="/uploadface" method="POST">
+    <input type="hidden" name="username" value="{{ username }}">
+    <input type="hidden" id="image_data" name="image_data">
+    <button type="submit">Submit</button>
+  </form>
+
+  <script>
+    const video = document.getElementById("video");
+    const canvas = document.getElementById("canvas");
+    const imageDataInput = document.getElementById("image_data");
+
+    navigator.mediaDevices.getUserMedia({ video: true })
+      .then(stream => {
+        video.srcObject = stream;
+      });
+
+    document.getElementById("captureBtn").addEventListener("click", () => {
+      canvas.width = video.videoWidth;
+      canvas.height = video.videoHeight;
+      canvas.getContext("2d").drawImage(video, 0, 0);
+      const dataURL = canvas.toDataURL("image/png");
+      imageDataInput.value = dataURL;
+      alert("Image captured! Click Submit to save.");
+    });
+  </script>
+</body>
+</html>
