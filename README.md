@@ -5,7 +5,7 @@ A web-based system for faculty to **manage student attendance** with marking opt
 
 ## 🛠️ Tech Stack
 - **Frontend:** HTML, CSS, JavaScript  
-- **Backend:** Python / Java (if applicable)  
+- **Backend:** Python - Java
 - **Database:** MySQL  
 
 ## 🚀 Features
